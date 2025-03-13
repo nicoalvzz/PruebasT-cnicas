@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recorrer Array con do...while</title>
+</head>
+<body>
+    <h2>Meses del Año (hasta antes de Julio)</h2>
+    <ul id="listaMeses"></ul>
+
+    <script>
+        // Defino un array con los nombres de los meses del año
+        let MesesAño = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+
+        // Defino la posición inicial para recorrer el array, para ello usaré la variable i
+        let i = 0;
+
+        // Obtengo el elemento <ul> donde mostraremos los meses
+        let lista = document.getElementById("listaMeses");
+
+        // Uso un bucle do...while para recorrer el array
+        do {
+            // Verifico si el mes actual es "Julio"
+            if (MesesAño[i] == "Julio") {
+                // Si el mes es Julio, detengo el bucle sin imprimirlo
+                break;
+            }
+
+            // Muestro el mes actual en la consola
+            console.log(MesesAño[i]);
+
+            // Creo un nuevo elemento <li> para la lista
+            let elementoLista = document.createElement("li");
+            // Asigno el nombre del mes al elemento <li>
+            elementoLista.textContent = MesesAño[i];
+            // Agrego el elemento <li> a la lista <ul>
+            lista.appendChild(elementoLista);
+
+            // Incremento la variable i para pasar al siguiente mes
+            i++;
+
+        // La condición del while evita que el bucle se ejecute si el mes actual es "Julio"
+        } while (i < MesesAño.length);
+    </script>
+</body>
+</html>

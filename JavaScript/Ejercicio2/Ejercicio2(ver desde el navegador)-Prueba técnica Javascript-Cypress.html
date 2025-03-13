@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invertir Cadena de Texto</title>
+</head>
+<body>
+
+    <h2>Cadena Invertida:</h2>
+    <p id="resultado"></p> <!-- Aquí se mostrará la cadena invertida -->
+
+    <script>
+        // Función para invertir una cadena de texto
+        function InvertirCadena(texto) {
+            // Convierto la cadena en un array de caracteres, para ello uso split('')
+            let ArrayCaracteres = texto.split('');
+
+            // Invierto el array de caracteres, para ello uso reverse()
+            let ArrayInvertido = ArrayCaracteres.reverse();
+
+            // Uno los caracteres invertidos en una nueva cadena mediante join('')
+            let CadenaInvertida = ArrayInvertido.join('');
+
+            // Retorno/LLamo la cadena invertida
+            return CadenaInvertida;
+        }
+
+        // Defino una cadena de texto
+        let CadenaTexto = "¡Qué ganas de empezar!";
+
+        // Llamo a la función y guardo el resultado en una variable
+        let CadenaTextoInvertida = InvertirCadena(CadenaTexto);
+
+        // Muestro el resultado en la consola
+        console.log(CadenaTextoInvertida);
+
+        // También lo muestro en la página dentro del <p> con id="resultado"
+        document.getElementById("resultado").innerText = "Cadena invertida: " + CadenaTextoInvertida;
+    </script>
+
+</body>
+</html>

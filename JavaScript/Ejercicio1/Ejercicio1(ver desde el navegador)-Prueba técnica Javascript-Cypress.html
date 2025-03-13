@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filtrar Números Pares</title>
+</head>
+<body>
+
+    <h2>Números Pares:</h2>
+    <p id="resultado"></p> <!-- Aquí se mostrará el resultado -->
+
+    <script>
+        // Función para filtrar los números pares que tengo en un array
+        function FiltrarPares(array) {
+            // Uso el método filter() para crear un nuevo array con solo los números pares
+            return array.filter(function(numero) {
+                return numero % 2 === 0; // Esto lo que hace es mantener solo los números que son divisibles por 2
+            });
+        }
+
+        // Defino el array
+        let numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        // Llamo a la función y guardo el resultado en una variable
+        let NumerosPares = FiltrarPares(numeros);
+
+        // Muestro el array filtrado mediante un console.log para poder visualizar el resultado
+        console.log(NumerosPares);
+
+        // También lo muestro en la página dentro del <p> con id="resultado"
+        document.getElementById("resultado").innerText = "Números pares: " + NumerosPares.join(", ");
+    </script>
+
+</body>
+</html>
